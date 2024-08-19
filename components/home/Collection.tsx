@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Collection = () => {
+	
 	return (
 		<section>
 			<div className="mx-auto  lg:w-10/12 px-4 py-8 sm:px-6 sm:py-12 lg:px-8">

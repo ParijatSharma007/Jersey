@@ -1,17 +1,24 @@
+"use client"
 
-import React from 'react'
-import { shopifyGraphQL } from 'shopify'
-import ptoduct_list from "@graphql/product_list.gql"
+import React, { Suspense } from 'react'
+import Calls from '@/components/test/Calls';
+import { useRouter } from 'next/navigation';
 
-const page = async() => {
+const page =() => {
 
-  const res = await shopifyGraphQL(ptoduct_list);
+  const router = useRouter()
 
-  console.log(res);
-  
-
+    const handlePush = () => {
+      router.push("/test_one")
+    }
+    
   return (
-    <div>page</div>
+    <div>
+      <button onClick={handlePush}>Push to test one</button>
+      <Suspense fallback={<p>...Loading</p>}>
+        <Calls id='123'/> 
+      </Suspense>
+    </div>
   )
 }
 

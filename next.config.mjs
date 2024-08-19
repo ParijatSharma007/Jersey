@@ -2,6 +2,7 @@ import BuilderDevTools from "@builder.io/dev-tools/next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = BuilderDevTools()({
+	reactStrictMode : false,
 	images: {
 		domains: ["tailwindui.com", "images.unsplash.com", "cdn.shopify.com"],
 	},
